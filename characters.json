@@ -528,5 +528,15 @@
     "family": "Bronn",
     "image": "bronn.jpg",
     "imageUrl": "https://thronesapi.com/assets/images/bronn.jpg"
+  },
+  {
+    "id": 53,
+    "firstName": "Alberto",
+    "lastName": "Fernandez",
+    "fullName": "Alberto Fernandez",
+    "title": "Lord Gatuno",
+    "family": "Los k",
+    "image": "betofernanz.jpg",
+    "imageUrl": "https://larosada/xxx.jpg"
   }
 ]
