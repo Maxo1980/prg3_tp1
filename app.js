@@ -8,7 +8,8 @@ async function getAllProducts() {
     if (!response.ok) {
       throw new Error(`Error, ${response.status}`);
     }
-    return await response.json();
+    const data = await response.json();
+    console.log(data);
   } catch (error) {
     console.log("No se pudo recuperar los productos", error);
   }
@@ -22,7 +23,8 @@ async function getLimitProducts(limit) {
     if (!response.ok) {
       throw new Error(`Error, ${response.status}`);
     }
-    return response.json();
+    const data = await response.json();
+    console.log(data);
   } catch (error) {
     console.log("Error al recuperar cantidad limitada de productos", error);
   }
@@ -52,7 +54,7 @@ async function newProduct() {
   } catch (error) {
     console.log("Error, no se pudo cargar el producto!", error);
   }
-
+}
   // 4. Retornar un producto (product) según un “id” como parámetro.
   async function getProductById(id) {
     try {
@@ -60,7 +62,8 @@ async function newProduct() {
       if (!response.ok) {
         throw new Error(`Error, ${response.status}`);
       }
-      return response.json;
+      const data =  await response.json();
+      console.log(data);
     } catch (error) {
       console.log("Error al retornar el id del producto", error);
     }
@@ -68,15 +71,23 @@ async function newProduct() {
   // 5. Eliminar un producto (product).
   async function deleteProduct(id) {
     try {
-      const response = await fetch(`${apiUrl}/${id}`);
+      const response = await fetch(`${apiUrl}/${id}`,{
+        method: "DELETE",
+      });
+      if (!response.ok){
+        throw new Error(`Error, ${response.status}`);
+      }
+      console.log(`Producto id: ${id} eliminado!`);
     } catch (error) {
       console.log("No se puedo eliminar el id", error);
     }
   }
-}
 
-getAllProducts();
-getLimitProducts(7);
-newProduct();
-getProductById(2);
-deleteProduct(1);
+
+(async () => {
+ await getAllProducts();
+ await getLimitProducts(7);
+ await newProduct();
+ await getProductById(2);
+ await deleteProduct(1);
+})();
