@@ -528,5 +528,15 @@
     "family": "Bronn",
     "image": "bronn.jpg",
     "imageUrl": "https://thronesapi.com/assets/images/bronn.jpg"
+  },
+  {
+    "id": 53,
+    "firstName": "Juan",
+    "lastName": "Perez",
+    "fullName": "Juan Perez",
+    "title": "Juancito",
+    "family": "Perez",
+    "image": "jp.jpg",
+    "imageUrl": "https://juancito/jp.jpg"
   }
 ]
